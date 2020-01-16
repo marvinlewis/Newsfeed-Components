@@ -191,7 +191,6 @@ let article2 = document.querySelector('.articles');
 };
 
 
-console.log(article2);
 
 
 data.forEach(function(item) {
