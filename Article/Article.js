@@ -112,3 +112,88 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+let article2 = document.querySelector('.articles');
+
+
+
+
+ function abc(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+
+  let article = document.createElement('div');
+
+ let title1 = document.createElement('h2');
+
+ let para1 = document.createElement('p');
+
+ let para2 = document.createElement('p');
+
+ let para3 = document.createElement('p');
+
+ let para4 = document.createElement('p');
+
+ let expandButton = document.createElement('span');
+
+  
+
+ article.append(title1);
+ article.append(para1);
+ article.append(para2);
+ article.append(para3);
+ article.append(para4);
+ article.append(expandButton);
+
+
+ article.classList.add('article');
+
+ para1.classList.add('date', 'articles');
+
+ expandButton.classList.add('expandButton', 'close');
+
+
+
+ 
+
+
+ title1.textContent = title;
+
+ para1.textContent = date;
+
+ para2.textContent = firstParagraph;
+
+ para3.textContent = secondParagraph;
+
+ para4.textContent = thirdParagraph;
+
+ expandButton.textContent = 'expand';
+
+ expandButton.style.display = 'flex';
+
+ expandButton.style.justifyContent = 'center';
+
+ expandButton.style.alignItems = 'flex-end';
+
+
+
+ expandButton.addEventListener('click', event => {
+
+   article.classList.toggle('article-open')
+
+  return article;
+ }
+ 
+ );
+
+ return article;
+
+
+};
+
+
+console.log(article2);
+
+
+data.forEach(function(item) {
+  article2.append(abc(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+});
